@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--Edit Page-->
+<section class="editPage">
+
+        <fieldset>
+            <legend>Delete Album</legend>
+            <div class="container">
+                <form method="POST" action="{% url 'delete album' pk %}">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button class="delete-album" type="submit">Delete Album</button>
+
+                </form>
+            </div>
+        </fieldset>
+
+</section>
+{% endblock %}
